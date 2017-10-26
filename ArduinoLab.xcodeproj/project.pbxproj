@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C032ECA81FA272E40001AB78 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECA71FA272E40001AB78 /* Colors.swift */; };
+		C08BAAAD1F9FFA6400A75649 /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BAAAC1F9FFA6400A75649 /* MyScene.swift */; };
 		C0F8EBB91F9EA96600635830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBB81F9EA96600635830 /* AppDelegate.swift */; };
 		C0F8EBBB1F9EA96600635830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBBA1F9EA96600635830 /* ViewController.swift */; };
 		C0F8EBBE1F9EA96600635830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F8EBBC1F9EA96600635830 /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		C0F8EBC31F9EA96600635830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F8EBC11F9EA96600635830 /* LaunchScreen.storyboard */; };
 		C0F8EBCE1F9EA96600635830 /* ArduinoLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBCD1F9EA96600635830 /* ArduinoLabTests.swift */; };
 		C0F8EBD91F9EA96600635830 /* ArduinoLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBD81F9EA96600635830 /* ArduinoLabUITests.swift */; };
+		C0F8EBE71F9EAABB00635830 /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBE61F9EAABB00635830 /* BLE.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C032ECA71FA272E40001AB78 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C08BAAAC1F9FFA6400A75649 /* MyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScene.swift; sourceTree = "<group>"; };
 		C0F8EBB51F9EA96600635830 /* ArduinoLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArduinoLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F8EBB81F9EA96600635830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F8EBBA1F9EA96600635830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		C0F8EBD41F9EA96600635830 /* ArduinoLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArduinoLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F8EBD81F9EA96600635830 /* ArduinoLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArduinoLabUITests.swift; sourceTree = "<group>"; };
 		C0F8EBDA1F9EA96600635830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0F8EBE61F9EAABB00635830 /* BLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				C0F8EBBF1F9EA96600635830 /* Assets.xcassets */,
 				C0F8EBC11F9EA96600635830 /* LaunchScreen.storyboard */,
 				C0F8EBC41F9EA96600635830 /* Info.plist */,
+				C0F8EBE61F9EAABB00635830 /* BLE.swift */,
+				C08BAAAC1F9FFA6400A75649 /* MyScene.swift */,
+				C032ECA71FA272E40001AB78 /* Colors.swift */,
 			);
 			path = ArduinoLab;
 			sourceTree = "<group>";
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C032ECA81FA272E40001AB78 /* Colors.swift in Sources */,
+				C08BAAAD1F9FFA6400A75649 /* MyScene.swift in Sources */,
 				C0F8EBBB1F9EA96600635830 /* ViewController.swift in Sources */,
+				C0F8EBE71F9EAABB00635830 /* BLE.swift in Sources */,
 				C0F8EBB91F9EA96600635830 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
