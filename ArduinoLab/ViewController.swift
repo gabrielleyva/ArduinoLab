@@ -77,7 +77,8 @@ class ViewController: UIViewController, BLEDelegate {
     
     func bleDidReceiveData(data: Data?) {
         // this data could be anything, here we know its an encoded string
-       // let s = String(bytes: data!, encoding: String.Encoding.utf8)
+//        let s = String(bytes: data!, encoding: String.Encoding.utf8)
+//        signal = s!
         
         
     }
@@ -147,6 +148,14 @@ class ViewController: UIViewController, BLEDelegate {
         }
     }
 
+    @objc func onBLEDidRecieveDataNotification(notification:Notification){
+        let d = notification.userInfo?["data"] as! Data?
+        let s = String(bytes: d!, encoding: String.Encoding.ascii)
+        if let value = Float(s!){
+            //self.dataBuffer.add(point: value)
+            signal = value
+        }
+    }
 
 }
 

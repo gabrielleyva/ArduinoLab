@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C032ECA81FA272E40001AB78 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECA71FA272E40001AB78 /* Colors.swift */; };
+		C032ECAA1FA27D310001AB78 /* HeartBeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECA91FA27D310001AB78 /* HeartBeatViewController.swift */; };
+		C032ECAC1FA280960001AB78 /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C032ECAB1FA280960001AB78 /* MyScene.sks */; };
+		C032ECAE1FA2B26E0001AB78 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECAD1FA2B26E0001AB78 /* GlobalVariables.swift */; };
 		C08BAAAD1F9FFA6400A75649 /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BAAAC1F9FFA6400A75649 /* MyScene.swift */; };
 		C0F8EBB91F9EA96600635830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBB81F9EA96600635830 /* AppDelegate.swift */; };
 		C0F8EBBB1F9EA96600635830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBBA1F9EA96600635830 /* ViewController.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		C032ECA71FA272E40001AB78 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C032ECA91FA27D310001AB78 /* HeartBeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatViewController.swift; sourceTree = "<group>"; };
+		C032ECAB1FA280960001AB78 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
+		C032ECAD1FA2B26E0001AB78 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		C08BAAAC1F9FFA6400A75649 /* MyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScene.swift; sourceTree = "<group>"; };
 		C0F8EBB51F9EA96600635830 /* ArduinoLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArduinoLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F8EBB81F9EA96600635830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 				C0F8EBE61F9EAABB00635830 /* BLE.swift */,
 				C08BAAAC1F9FFA6400A75649 /* MyScene.swift */,
 				C032ECA71FA272E40001AB78 /* Colors.swift */,
+				C032ECA91FA27D310001AB78 /* HeartBeatViewController.swift */,
+				C032ECAB1FA280960001AB78 /* MyScene.sks */,
+				C032ECAD1FA2B26E0001AB78 /* GlobalVariables.swift */,
 			);
 			path = ArduinoLab;
 			sourceTree = "<group>";
@@ -243,6 +252,7 @@
 			files = (
 				C0F8EBC31F9EA96600635830 /* LaunchScreen.storyboard in Resources */,
 				C0F8EBC01F9EA96600635830 /* Assets.xcassets in Resources */,
+				C032ECAC1FA280960001AB78 /* MyScene.sks in Resources */,
 				C0F8EBBE1F9EA96600635830 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +282,9 @@
 				C08BAAAD1F9FFA6400A75649 /* MyScene.swift in Sources */,
 				C0F8EBBB1F9EA96600635830 /* ViewController.swift in Sources */,
 				C0F8EBE71F9EAABB00635830 /* BLE.swift in Sources */,
+				C032ECAE1FA2B26E0001AB78 /* GlobalVariables.swift in Sources */,
 				C0F8EBB91F9EA96600635830 /* AppDelegate.swift in Sources */,
+				C032ECAA1FA27D310001AB78 /* HeartBeatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

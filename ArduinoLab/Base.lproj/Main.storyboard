@@ -122,20 +122,34 @@
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Heart Beat View Controller-->
         <scene sceneID="J4G-Yu-g9n">
             <objects>
-                <viewController id="U5D-z8-jei" sceneMemberID="viewController">
+                <viewController id="U5D-z8-jei" customClass="HeartBeatViewController" customModule="ArduinoLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="adM-nb-SJs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejM-Ef-Ty6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </skView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ejM-Ef-Ty6" firstAttribute="trailing" secondItem="8IQ-t8-GLe" secondAttribute="trailing" id="108-g0-nkA"/>
+                            <constraint firstItem="ejM-Ef-Ty6" firstAttribute="top" secondItem="8IQ-t8-GLe" secondAttribute="top" id="JGz-Zu-LF2"/>
+                            <constraint firstItem="ejM-Ef-Ty6" firstAttribute="leading" secondItem="8IQ-t8-GLe" secondAttribute="leading" id="fUg-IP-Kjs"/>
+                            <constraint firstItem="ejM-Ef-Ty6" firstAttribute="bottom" secondItem="8IQ-t8-GLe" secondAttribute="bottom" id="hJ3-mV-IGW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8IQ-t8-GLe"/>
                     </view>
+                    <connections>
+                        <outlet property="graphView" destination="ejM-Ef-Ty6" id="GHB-fw-q7T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9v-nO-0Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="133"/>
+            <point key="canvasLocation" x="1192.8" y="132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DUM-Kp-spO">
