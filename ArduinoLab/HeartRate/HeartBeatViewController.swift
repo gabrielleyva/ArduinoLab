@@ -29,6 +29,7 @@ class HeartBeatViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         prepareScene()
+        bpmLabel.textColor = .newRed
         // BLE Recieve Data Notification
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.onBLEDidRecieveDataNotification),

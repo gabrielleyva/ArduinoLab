@@ -105,6 +105,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C032ECC51FA3B4900001AB78 /* HeartRate */ = {
+			isa = PBXGroup;
+			children = (
+				C032ECA91FA27D310001AB78 /* HeartBeatViewController.swift */,
+				C032ECAB1FA280960001AB78 /* MyScene.sks */,
+				C08BAAAC1F9FFA6400A75649 /* MyScene.swift */,
+			);
+			path = HeartRate;
+			sourceTree = "<group>";
+		};
+		C032ECC61FA3B4CE0001AB78 /* LDR */ = {
+			isa = PBXGroup;
+			children = (
+				C032ECC31FA3AC3E0001AB78 /* LDRViewController.swift */,
+				C032ECBB1FA3A97D0001AB78 /* Bulb.sks */,
+				C032ECC11FA3AA040001AB78 /* LDRScene.sks */,
+				C032ECBF1FA3A9F30001AB78 /* LDRScene.swift */,
+			);
+			path = LDR;
+			sourceTree = "<group>";
+		};
+		C032ECC71FA3B4E80001AB78 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C032ECAD1FA2B26E0001AB78 /* GlobalVariables.swift */,
+				C032ECA71FA272E40001AB78 /* Colors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C032ECC81FA3B50F0001AB78 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C0F8EBE61F9EAABB00635830 /* BLE.swift */,
+				C032ECB71FA3A57A0001AB78 /* FFTHelper.h */,
+				C032ECB61FA3A57A0001AB78 /* FFTHelper.m */,
+				C032ECB51FA3A57A0001AB78 /* PeakFinder.h */,
+				C032ECB81FA3A57A0001AB78 /* PeakFinder.m */,
+				C032ECB21FA3A0310001AB78 /* Buffer.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		C0F8EBAC1F9EA96600635830 = {
 			isa = PBXGroup;
 			children = (
@@ -128,29 +171,18 @@
 		C0F8EBB71F9EA96600635830 /* ArduinoLab */ = {
 			isa = PBXGroup;
 			children = (
-				C032ECC31FA3AC3E0001AB78 /* LDRViewController.swift */,
+				C032ECB41FA3A5790001AB78 /* ArduinoLab-Bridging-Header.h */,
+				C032ECC81FA3B50F0001AB78 /* Utilities */,
+				C032ECC61FA3B4CE0001AB78 /* LDR */,
+				C032ECC51FA3B4900001AB78 /* HeartRate */,
+				C032ECC71FA3B4E80001AB78 /* Extensions */,
 				C0F8EBB81F9EA96600635830 /* AppDelegate.swift */,
 				C0F8EBBA1F9EA96600635830 /* ViewController.swift */,
 				C0F8EBBC1F9EA96600635830 /* Main.storyboard */,
 				C0F8EBBF1F9EA96600635830 /* Assets.xcassets */,
 				C0F8EBC11F9EA96600635830 /* LaunchScreen.storyboard */,
 				C0F8EBC41F9EA96600635830 /* Info.plist */,
-				C0F8EBE61F9EAABB00635830 /* BLE.swift */,
-				C08BAAAC1F9FFA6400A75649 /* MyScene.swift */,
-				C032ECA71FA272E40001AB78 /* Colors.swift */,
-				C032ECA91FA27D310001AB78 /* HeartBeatViewController.swift */,
-				C032ECAB1FA280960001AB78 /* MyScene.sks */,
-				C032ECAD1FA2B26E0001AB78 /* GlobalVariables.swift */,
 				C032ECB01FA3976F0001AB78 /* TableViewController.swift */,
-				C032ECB71FA3A57A0001AB78 /* FFTHelper.h */,
-				C032ECB61FA3A57A0001AB78 /* FFTHelper.m */,
-				C032ECB51FA3A57A0001AB78 /* PeakFinder.h */,
-				C032ECB81FA3A57A0001AB78 /* PeakFinder.m */,
-				C032ECB21FA3A0310001AB78 /* Buffer.swift */,
-				C032ECB41FA3A5790001AB78 /* ArduinoLab-Bridging-Header.h */,
-				C032ECBB1FA3A97D0001AB78 /* Bulb.sks */,
-				C032ECBF1FA3A9F30001AB78 /* LDRScene.swift */,
-				C032ECC11FA3AA040001AB78 /* LDRScene.sks */,
 			);
 			path = ArduinoLab;
 			sourceTree = "<group>";

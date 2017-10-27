@@ -22,6 +22,7 @@ class ViewController: UIViewController, BLEDelegate {
     @IBOutlet weak var rssiLabel: UILabel!
     
     @IBOutlet weak var heartRateButton: UIButton!
+    @IBOutlet weak var ldrButton: UIButton!
     
     @IBOutlet weak var ledLabel1: UILabel!
     @IBOutlet weak var ledLabel2: UILabel!
@@ -29,9 +30,13 @@ class ViewController: UIViewController, BLEDelegate {
     @IBOutlet weak var switch1: UISwitch!
     @IBOutlet weak var switch2: UISwitch!
     
+    @IBOutlet weak var slider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.prepareButtons()
+        
+        
         // BLE Connect Notification
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.onBLEDidConnectNotification),
@@ -59,13 +64,17 @@ class ViewController: UIViewController, BLEDelegate {
         heartRateButton.layer.borderColor = UIColor.newRed.cgColor
         heartRateButton.layer.borderWidth = 1
         heartRateButton.layer.cornerRadius = 5
+        
+        ldrButton.tintColor = .newBlue
+        ldrButton.layer.borderColor = UIColor.newBlue.cgColor
+        ldrButton.layer.borderWidth = 1
+        ldrButton.layer.cornerRadius = 5
+        
     }
     
     func readRSSITimer(timer:Timer){
         bleShield.readRSSI { (number, error) in
             // when RSSI read is complete, display it
-            print("Working")
-            print(number?.floatValue)
             self.rssiLabel.text = String(format: "RSSI: %.1f",(number?.floatValue)!)
         }
     }
@@ -191,7 +200,13 @@ class ViewController: UIViewController, BLEDelegate {
         bleShield.write(d)
     }
     
-   
+    @IBAction func sliderDidSlide(_ sender: Any) {
+        print(Int(slider.value))
+        let command = "E" + String(describing: Int(slider.value))
+        print(command)
+        bleShield.write(command.data(using: String.Encoding.ascii)!)
+    }
+    
     
 }
 

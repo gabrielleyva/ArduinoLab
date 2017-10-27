@@ -29,6 +29,7 @@ class LDRScene: SKScene {
         if let particle = SKEmitterNode(fileNamed: "Bulb.sks") {
             particle.position = CGPoint(x: 0, y:  0)
             bulb = particle
+            bulb.particleBirthRate = 0.0
             addChild(bulb)
         }
     }

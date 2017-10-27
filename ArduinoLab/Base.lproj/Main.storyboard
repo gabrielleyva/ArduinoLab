@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vzK-yH-w75">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSI: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzD-BO-ogX">
                                 <rect key="frame" x="242" y="28" width="117" height="21"/>
                                 <constraints>
@@ -82,19 +85,29 @@
                                     <constraint firstAttribute="width" constant="100" id="Ylp-1H-Bss"/>
                                     <constraint firstAttribute="height" constant="40" id="wp4-hf-Qeg"/>
                                 </constraints>
-                                <state key="normal" title="LDR Monitring"/>
+                                <state key="normal" title="LDR"/>
                                 <connections>
                                     <segue destination="nE9-b3-7e6" kind="show" id="n3T-cF-4lS"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vzK-yH-w75">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="gIe-62-CfR">
+                                <rect key="frame" x="38" y="352" width="299" height="31"/>
+                                <connections>
+                                    <action selector="sliderDidSlide:" destination="BYZ-38-t0r" eventType="valueChanged" id="mIj-uz-hjK"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Brightness of LED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsz-g1-Ra2">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PzD-BO-ogX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="5KG-Mv-34p"/>
                             <constraint firstItem="oxB-SY-wf0" firstAttribute="top" secondItem="x8E-08-S3c" secondAttribute="bottom" constant="32" id="5XU-4X-wTH"/>
+                            <constraint firstItem="gIe-62-CfR" firstAttribute="top" secondItem="rsz-g1-Ra2" secondAttribute="bottom" constant="8" id="86R-lX-YIR"/>
                             <constraint firstItem="vzK-yH-w75" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9rf-0i-r89"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="84z-Ih-GOv" secondAttribute="trailing" constant="40" id="FL1-ot-hmU"/>
                             <constraint firstItem="oxB-SY-wf0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GAA-GR-zIc"/>
@@ -104,12 +117,18 @@
                             <constraint firstItem="Ish-kC-baq" firstAttribute="centerY" secondItem="x8E-08-S3c" secondAttribute="centerY" id="Kfg-IR-ikl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PzD-BO-ogX" secondAttribute="trailing" constant="16" id="LcR-6M-b6U"/>
                             <constraint firstItem="vzK-yH-w75" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mdj-T5-kvG"/>
+                            <constraint firstItem="gIe-62-CfR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Mem-2W-D2N"/>
+                            <constraint firstItem="rsz-g1-Ra2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PqS-OY-bCO"/>
                             <constraint firstItem="dCZ-Ar-b3B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="UfN-4V-4fs"/>
                             <constraint firstItem="x8E-08-S3c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="atk-s8-blw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="orV-nx-rt7" secondAttribute="trailing" constant="16" id="bZK-HZ-7to"/>
+                            <constraint firstItem="rsz-g1-Ra2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ged-pb-Ej7"/>
+                            <constraint firstItem="rsz-g1-Ra2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jU8-w6-JH8"/>
                             <constraint firstItem="x8E-08-S3c" firstAttribute="top" secondItem="dCZ-Ar-b3B" secondAttribute="bottom" constant="32" id="jh3-z5-gZs"/>
                             <constraint firstItem="UYd-Eu-ReS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="nxk-ce-2Qt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rsz-g1-Ra2" secondAttribute="trailing" constant="16" id="oZh-fw-h6k"/>
                             <constraint firstItem="84z-Ih-GOv" firstAttribute="top" secondItem="orV-nx-rt7" secondAttribute="bottom" constant="50" id="vM8-uz-RQc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gIe-62-CfR" secondAttribute="trailing" constant="40" id="vkE-wp-Ojp"/>
                             <constraint firstItem="UYd-Eu-ReS" firstAttribute="top" secondItem="oxB-SY-wf0" secondAttribute="bottom" constant="50" id="wK3-J4-qxq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -118,9 +137,11 @@
                     <connections>
                         <outlet property="deviceLabel" destination="dCZ-Ar-b3B" id="6IK-pf-nBr"/>
                         <outlet property="heartRateButton" destination="UYd-Eu-ReS" id="R6P-v2-OVQ"/>
+                        <outlet property="ldrButton" destination="84z-Ih-GOv" id="vQX-b6-ahU"/>
                         <outlet property="ledLabel1" destination="Ish-kC-baq" id="RTV-VF-Zj6"/>
                         <outlet property="ledLabel2" destination="orV-nx-rt7" id="YNf-6Z-EW8"/>
                         <outlet property="rssiLabel" destination="PzD-BO-ogX" id="GQC-8Y-Tmu"/>
+                        <outlet property="slider" destination="gIe-62-CfR" id="abE-EF-Qhl"/>
                         <outlet property="spinner" destination="vzK-yH-w75" id="Gck-vj-tnr"/>
                         <outlet property="switch1" destination="x8E-08-S3c" id="OJ3-iv-wC9"/>
                         <outlet property="switch2" destination="oxB-SY-wf0" id="9nh-KA-9Jg"/>
