@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 var signal:Float =  0.0
-
+var monitoringHr = false
 

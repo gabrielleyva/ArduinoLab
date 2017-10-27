@@ -11,10 +11,14 @@ import UIKit
 class ViewController: UIViewController, BLEDelegate {
 
     // MARK: VC Properties
-    var bleShield = BLE()
+    lazy var bleShield = (UIApplication.shared.delegate as! AppDelegate).bleShield
     var rssiTimer = Timer()
+    var bpmResetTimer = Timer()
+
+    
+    @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var buttonConnect: UIButton!
+  
     @IBOutlet weak var rssiLabel: UILabel!
     
     @IBOutlet weak var heartRateButton: UIButton!
@@ -28,17 +32,28 @@ class ViewController: UIViewController, BLEDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        bleShield.delegate = self
-        self.spinner.isHidden = true
-        prepareButtons()
+        // BLE Connect Notification
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.onBLEDidConnectNotification),
+                                               name: NSNotification.Name(rawValue: kBleConnectNotification),
+                                               object: nil)
+        
+        // BLE Disconnect Notification
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.onBLEDidDisconnectNotification),
+                                               name: NSNotification.Name(rawValue: kBleDisconnectNotification),
+                                               object: nil)
+        
+        // BLE Recieve Data Notification
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.onBLEDidRecieveDataNotification),
+                                               name: NSNotification.Name(rawValue: kBleReceivedDataNotification),
+                                               object: nil)
+        self.spinner.isHidden = false
+        self.spinner.startAnimating()
     }
     
     func prepareButtons(){
-        buttonConnect.tintColor = .newBlue
-        buttonConnect.layer.borderColor = UIColor.newBlue.cgColor
-        buttonConnect.layer.borderWidth = 1
-        buttonConnect.layer.cornerRadius = 5
         
         heartRateButton.tintColor = .newRed
         heartRateButton.layer.borderColor = UIColor.newRed.cgColor
@@ -49,7 +64,9 @@ class ViewController: UIViewController, BLEDelegate {
     func readRSSITimer(timer:Timer){
         bleShield.readRSSI { (number, error) in
             // when RSSI read is complete, display it
-            self.rssiLabel.text = String(format: "%.1f",(number?.floatValue)!)
+            print("Working")
+            print(number?.floatValue)
+            self.rssiLabel.text = String(format: "RSSI: %.1f",(number?.floatValue)!)
         }
     }
     
@@ -61,7 +78,7 @@ class ViewController: UIViewController, BLEDelegate {
     func bleDidConnectToPeripheral() {
         self.spinner.stopAnimating()
         self.spinner.isHidden = true
-        self.buttonConnect.setTitle("Disconnect", for: .normal)
+        
         
         // Schedule to read RSSI every 1 sec.
         rssiTimer = Timer.scheduledTimer(withTimeInterval: 1.0,
@@ -71,8 +88,9 @@ class ViewController: UIViewController, BLEDelegate {
     }
     
     func bleDidDisconnectFromPeripheral() {
-        self.buttonConnect.setTitle("Connect", for: .normal)
+        
         rssiTimer.invalidate()
+        self.dismiss(animated: true, completion: nil)
     }
     
     func bleDidReceiveData(data: Data?) {
@@ -83,58 +101,30 @@ class ViewController: UIViewController, BLEDelegate {
         
     }
     
-    // MARK: User initiated Functions
-    @IBAction func buttonScanForDevices(_ sender: UIButton) {
-        
-        // disconnect from any peripherals
-        var didDisconnect = false
-        for peripheral in bleShield.peripherals {
-            if(peripheral.state == .connected){
-                if(bleShield.disconnectFromPeripheral(peripheral: peripheral)){
-                    didDisconnect = true
-                }
-            }
-        }
-        // if we disconnected anything, return from button
-        if(didDisconnect){
-            return
-        }
-        
-        //start search for peripherals with a timeout of 3 seconds
-        // this is an asynchronous call and will return before search is complete
-        if(bleShield.startScanning(timeout: 3.0)){
-            // after three seconds, try to connect to first peripheral
-            Timer.scheduledTimer(withTimeInterval: 3.0,
-                                 repeats: false,
-                                 block: self.connectTimer)
-        }
-        
-        // give connection feedback to the user
-        self.spinner.isHidden = false
-        self.spinner.startAnimating()
-    }
+    
     
     @IBAction func didSwitchLed1(_ sender: Any) {
         if switch1.isOn {
-            ledLabel1.text = "LED 1: On"
+            ledLabel1.text = "Heart Rate Monitoring: On"
+            self.startHeartRateMonitor()
+            monitoringHr = true
         } else {
-            ledLabel1.text = "LED 1: Off"
+            ledLabel1.text = "Heart Rate Monitoring: Off"
+            self.stopHeartRateMonitor()
+            monitoringHr = false
         }
     }
     
     @IBAction func didSwitchLed2(_ sender: Any) {
         if switch2.isOn {
-            ledLabel2.text = "LED 2: On"
+            ledLabel2.text = "LDR: On"
+            self.startLDRMonitor()
         } else {
-            ledLabel2.text = "LED 2: Off"
+            ledLabel2.text = "LDR: Off"
+            self.stopLDRMonitor()
         }
     }
-    @IBAction func sendDataButton(_ sender: UIButton) {
-        
-//        let d = s.data(using: String.Encoding.utf8)!
-//        bleShield.write(d)
-        // if (self.textField.text.length > 16)
-    }
+    
     
     func connectTimer(timer:Timer){
         
@@ -156,6 +146,52 @@ class ViewController: UIViewController, BLEDelegate {
             signal = value
         }
     }
+    
+    // NEW  DISCONNECT FUNCTION
+    @objc func onBLEDidDisconnectNotification(notification:Notification){
+        print("Notification arrived that BLE Disconnected a Peripheral")
+        rssiTimer.invalidate()
+    }
+    
+    @objc func onBLEDidConnectNotification(notification:Notification){
+        print("Notification arrived that BLE Connected")
+        let deviceName = notification.userInfo?["name"] as! String?
+        self.deviceLabel.text = deviceName
+        self.spinner.stopAnimating()
+        self.spinner.isHidden = true
+        rssiTimer = Timer.scheduledTimer(withTimeInterval: 1.0,
+                                         repeats: true,
+                                         block: self.readRSSITimer)
+    }
 
+    func startHeartRateMonitor() {
+        //
+        let command = "A"
+        let d = command.data(using: String.Encoding.ascii)!
+        bleShield.write(d)
+    }
+    func stopHeartRateMonitor()  {
+        //
+        let command = "B"
+        let d = command.data(using: String.Encoding.ascii)!
+        bleShield.write(d)
+        
+    }
+    func startLDRMonitor() {
+        //
+        let command = "C"
+        let d = command.data(using: String.Encoding.ascii)!
+        bleShield.write(d)
+        
+    }
+    func stopLDRMonitor()  {
+        //
+        let command = "D"
+        let d = command.data(using: String.Encoding.ascii)!
+        bleShield.write(d)
+    }
+    
+   
+    
 }
 

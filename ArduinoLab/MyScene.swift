@@ -11,7 +11,7 @@ import SpriteKit
 
 class MyScene: SKScene {
     
-    var dot: SKSpriteNode!
+    var dot: SKShapeNode!
     var globalSignal: Double!
     
     var bulletInterval: Float = 0.0
@@ -30,10 +30,14 @@ class MyScene: SKScene {
     
     func plotGraph() {
         
-        dot = SKSpriteNode(color: .newRed, size: CGSize(width: 10, height: 10))
-        dot.position = CGPoint(x: self.frame.size.width, y: CGFloat((-100) + (signal / 4)))
+        //dot = SKSpriteNode(color: .newRed, size: CGSize(width: 10, height: 10))
+        dot = SKShapeNode(circleOfRadius: 10)
+        dot.fillColor = .newRed
+        dot.strokeColor = .newRed
+    
+        dot.position = CGPoint(x: self.frame.size.width, y: CGFloat((-400) + (signal / 8)))
         
-        let moveLeft = SKAction.moveTo(x: -self.frame.size.width, duration: 3.0)
+        let moveLeft = SKAction.moveTo(x: -self.frame.size.width, duration: 1.5)
         let sequence = SKAction.sequence([moveLeft, SKAction.removeFromParent()])
         dot.run(sequence)
         

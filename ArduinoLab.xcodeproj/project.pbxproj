@@ -11,6 +11,14 @@
 		C032ECAA1FA27D310001AB78 /* HeartBeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECA91FA27D310001AB78 /* HeartBeatViewController.swift */; };
 		C032ECAC1FA280960001AB78 /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C032ECAB1FA280960001AB78 /* MyScene.sks */; };
 		C032ECAE1FA2B26E0001AB78 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECAD1FA2B26E0001AB78 /* GlobalVariables.swift */; };
+		C032ECB11FA3976F0001AB78 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECB01FA3976F0001AB78 /* TableViewController.swift */; };
+		C032ECB31FA3A0310001AB78 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECB21FA3A0310001AB78 /* Buffer.swift */; };
+		C032ECB91FA3A57A0001AB78 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C032ECB61FA3A57A0001AB78 /* FFTHelper.m */; };
+		C032ECBA1FA3A57A0001AB78 /* PeakFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = C032ECB81FA3A57A0001AB78 /* PeakFinder.m */; };
+		C032ECBC1FA3A97D0001AB78 /* Bulb.sks in Resources */ = {isa = PBXBuildFile; fileRef = C032ECBB1FA3A97D0001AB78 /* Bulb.sks */; };
+		C032ECC01FA3A9F30001AB78 /* LDRScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECBF1FA3A9F30001AB78 /* LDRScene.swift */; };
+		C032ECC21FA3AA040001AB78 /* LDRScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C032ECC11FA3AA040001AB78 /* LDRScene.sks */; };
+		C032ECC41FA3AC3E0001AB78 /* LDRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032ECC31FA3AC3E0001AB78 /* LDRViewController.swift */; };
 		C08BAAAD1F9FFA6400A75649 /* MyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BAAAC1F9FFA6400A75649 /* MyScene.swift */; };
 		C0F8EBB91F9EA96600635830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBB81F9EA96600635830 /* AppDelegate.swift */; };
 		C0F8EBBB1F9EA96600635830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8EBBA1F9EA96600635830 /* ViewController.swift */; };
@@ -44,6 +52,17 @@
 		C032ECA91FA27D310001AB78 /* HeartBeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatViewController.swift; sourceTree = "<group>"; };
 		C032ECAB1FA280960001AB78 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
 		C032ECAD1FA2B26E0001AB78 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		C032ECB01FA3976F0001AB78 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C032ECB21FA3A0310001AB78 /* Buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
+		C032ECB41FA3A5790001AB78 /* ArduinoLab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArduinoLab-Bridging-Header.h"; sourceTree = "<group>"; };
+		C032ECB51FA3A57A0001AB78 /* PeakFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeakFinder.h; sourceTree = "<group>"; };
+		C032ECB61FA3A57A0001AB78 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
+		C032ECB71FA3A57A0001AB78 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
+		C032ECB81FA3A57A0001AB78 /* PeakFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeakFinder.m; sourceTree = "<group>"; };
+		C032ECBB1FA3A97D0001AB78 /* Bulb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Bulb.sks; sourceTree = "<group>"; };
+		C032ECBF1FA3A9F30001AB78 /* LDRScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDRScene.swift; sourceTree = "<group>"; };
+		C032ECC11FA3AA040001AB78 /* LDRScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LDRScene.sks; sourceTree = "<group>"; };
+		C032ECC31FA3AC3E0001AB78 /* LDRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDRViewController.swift; sourceTree = "<group>"; };
 		C08BAAAC1F9FFA6400A75649 /* MyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScene.swift; sourceTree = "<group>"; };
 		C0F8EBB51F9EA96600635830 /* ArduinoLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArduinoLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F8EBB81F9EA96600635830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +128,7 @@
 		C0F8EBB71F9EA96600635830 /* ArduinoLab */ = {
 			isa = PBXGroup;
 			children = (
+				C032ECC31FA3AC3E0001AB78 /* LDRViewController.swift */,
 				C0F8EBB81F9EA96600635830 /* AppDelegate.swift */,
 				C0F8EBBA1F9EA96600635830 /* ViewController.swift */,
 				C0F8EBBC1F9EA96600635830 /* Main.storyboard */,
@@ -121,6 +141,16 @@
 				C032ECA91FA27D310001AB78 /* HeartBeatViewController.swift */,
 				C032ECAB1FA280960001AB78 /* MyScene.sks */,
 				C032ECAD1FA2B26E0001AB78 /* GlobalVariables.swift */,
+				C032ECB01FA3976F0001AB78 /* TableViewController.swift */,
+				C032ECB71FA3A57A0001AB78 /* FFTHelper.h */,
+				C032ECB61FA3A57A0001AB78 /* FFTHelper.m */,
+				C032ECB51FA3A57A0001AB78 /* PeakFinder.h */,
+				C032ECB81FA3A57A0001AB78 /* PeakFinder.m */,
+				C032ECB21FA3A0310001AB78 /* Buffer.swift */,
+				C032ECB41FA3A5790001AB78 /* ArduinoLab-Bridging-Header.h */,
+				C032ECBB1FA3A97D0001AB78 /* Bulb.sks */,
+				C032ECBF1FA3A9F30001AB78 /* LDRScene.swift */,
+				C032ECC11FA3AA040001AB78 /* LDRScene.sks */,
 			);
 			path = ArduinoLab;
 			sourceTree = "<group>";
@@ -211,6 +241,7 @@
 				TargetAttributes = {
 					C0F8EBB41F9EA96600635830 = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					C0F8EBC81F9EA96600635830 = {
@@ -251,8 +282,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F8EBC31F9EA96600635830 /* LaunchScreen.storyboard in Resources */,
+				C032ECC21FA3AA040001AB78 /* LDRScene.sks in Resources */,
 				C0F8EBC01F9EA96600635830 /* Assets.xcassets in Resources */,
 				C032ECAC1FA280960001AB78 /* MyScene.sks in Resources */,
+				C032ECBC1FA3A97D0001AB78 /* Bulb.sks in Resources */,
 				C0F8EBBE1F9EA96600635830 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,10 +314,16 @@
 				C032ECA81FA272E40001AB78 /* Colors.swift in Sources */,
 				C08BAAAD1F9FFA6400A75649 /* MyScene.swift in Sources */,
 				C0F8EBBB1F9EA96600635830 /* ViewController.swift in Sources */,
+				C032ECB11FA3976F0001AB78 /* TableViewController.swift in Sources */,
+				C032ECBA1FA3A57A0001AB78 /* PeakFinder.m in Sources */,
 				C0F8EBE71F9EAABB00635830 /* BLE.swift in Sources */,
 				C032ECAE1FA2B26E0001AB78 /* GlobalVariables.swift in Sources */,
 				C0F8EBB91F9EA96600635830 /* AppDelegate.swift in Sources */,
 				C032ECAA1FA27D310001AB78 /* HeartBeatViewController.swift in Sources */,
+				C032ECB91FA3A57A0001AB78 /* FFTHelper.m in Sources */,
+				C032ECC01FA3A9F30001AB78 /* LDRScene.swift in Sources */,
+				C032ECB31FA3A0310001AB78 /* Buffer.swift in Sources */,
+				C032ECC41FA3AC3E0001AB78 /* LDRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,12 +489,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54AV24VF28;
 				INFOPLIST_FILE = ArduinoLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeyvaPhadate.ArduinoLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ArduinoLab/ArduinoLab-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -465,12 +507,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54AV24VF28;
 				INFOPLIST_FILE = ArduinoLab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeyvaPhadate.ArduinoLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ArduinoLab/ArduinoLab-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
